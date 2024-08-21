@@ -1,5 +1,5 @@
 """
-URL configuration for prueba project.
+URL configuration for proyectoinicial project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from proyectoinicial.view import saluda, chaoo, fecha, calculaedad
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('saluda/', saluda),
+    path('despedida/', chaoo),
+    path('fechahoy/', fecha),
+    path('edad/<int:edad>/<int:agno>/', calculaedad)
+
 
 ]
