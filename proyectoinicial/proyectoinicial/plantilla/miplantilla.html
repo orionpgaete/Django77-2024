@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <h1 style="color: blue">
+             Bienvenidos a la clase de Django version Plantilla WEB!!!!
+        </h1>
+        <p>El nombre de la persona es: {{nombre_per}} {{apellido_per}}</p>
+        <p>Estamos en la clase del dia: {{fechahoy.day}}/{{fechahoy.month}}/{{fechahoy.year}}</p>
+        <p>Y la hora es: {{fechahoy.hour}}:{{fechahoy.minute}}</p>
+        <p><strong>Temas del Curso</strong></p>
+        
+        <ul>
+            {% if temas %}
+                {% for eltema in temas %}
+
+                    <li>{{eltema}}</li>
+
+                {% endfor %}
+            {% else %}
+                <p>No tenemos nada que mostrar</p>
+            {% endif %}
+        </ul>
+
+
+
+
+    </body>
+</html>
