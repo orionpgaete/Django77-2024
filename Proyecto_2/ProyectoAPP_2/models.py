@@ -20,3 +20,6 @@ class Pedido(models.Model):
 #  python manage.py makemigrations
 
 # python3 manage.py migrate
+
+# DESCARGAR SQLBROWSER https://sqlitebrowser.org/dl/
+
