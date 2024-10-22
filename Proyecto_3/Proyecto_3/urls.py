@@ -22,4 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('agregarP/', views.agregarPersona),
+    path('listarP/', views.listaPersona),
+    path('eliminarP/<int:id>', views.eliminarPersona),
+    
 ]

@@ -10,10 +10,13 @@
 <body class = "container mt-5">
     <div class="alert alert-info display-1 text-center">Agregar Personas</div>
     
-        <form method="">
+        <form method='post'>
             {{formP.as_p}}
+            {% csrf_token %}
+            <input type="submit" value="Agregar" class="btn btn-success">
         </form>
-    <a href="/index" class="btn btn-info">PRINCIPAL</a>
+        
+    <a href="/" class="btn btn-info">PRINCIPAL</a>
 
 </body>
 </html>
