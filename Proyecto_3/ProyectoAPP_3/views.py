@@ -28,3 +28,16 @@ def eliminarPersona(request, id):
     perso = Persona.objects.get(id = id)
     perso.delete()
     return redirect('/listarP')
+
+def actualizarPersona(request, id):
+    perso = Persona.objects.get(id = id)
+    form = FormPersona(instance=perso)
+    
+    if request.method == 'POST':
+        form = FormPersona(request.POST, instance=perso)
+        if form.is_valid() :
+            form.save()
+        return index(request)
+    
+    data = {'formP' : form}
+    return render(request, 'agregarPersona.html', data)
