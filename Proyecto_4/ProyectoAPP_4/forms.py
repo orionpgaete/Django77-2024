@@ -1,11 +1,16 @@
+from django.core import validators
 from django import forms
 
 class Usuario (forms.Form) :
     
     ESTADOS =[('Valido', 'VALIDO'), ('invalido' , 'INVALIDO')] 
 
-    nombre = forms.CharField()
-    apellido = forms.CharField()
+    nombre = forms.CharField(required=True)
+    apellido = forms.CharField(validators=
+                               [validators.MinLengthValidator(5),
+                                validators.MaxLengthValidator(10)]
+
+    )
     email = forms.EmailField(widget=forms.EmailInput)
     password = forms.CharField(widget=forms.PasswordInput)
     estado = forms.CharField(widget=forms.Select(choices=ESTADOS))
